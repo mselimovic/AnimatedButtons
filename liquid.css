@@ -1,0 +1,111 @@
+:root {
+  --cyberpunk:#750863;
+  --cyberpunk2: #c82ebb;
+  --cyberpunk3: #a2008a;
+}
+
+.liquid {
+  position: relative;
+  width: 120px;
+  height: 40px;
+  cursor: pointer;
+  background-color: var(--cyberpunk);
+  border-radius: 20px;
+}
+
+.liquid p {
+  position: absolute;
+  top: 50%;
+  height: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  z-index: 10;
+  color: rgb(255, 255, 255);
+}
+
+
+.liquid-eff {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 40px;
+  border-radius: 10%;
+
+}
+
+.liquid-eff::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-100%, -50%);
+  background-color: var(--cyberpunk);
+  border-radius: 10%;
+  transition: 1.5s cubic-bezier(0,3,0.1,-0.05);
+}
+
+.liquid-eff::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--cyberpunk2);
+  border-radius: 100%;
+  transition: 1.7s cubic-bezier(0,2,0.61,-0.05);
+}
+
+.liquid-eff > span:nth-of-type(1), 
+.liquid-eff > span:nth-of-type(2){
+  position: absolute;
+  width: 45px;
+  height: 40px;
+  top: 0;
+  left:0;
+  background-color: var(--cyberpunk3);
+  border-radius: 100%;
+  transition: 1.4s cubic-bezier(0.3,2.3,0.61,-0.05);
+
+
+}
+
+/* optional */
+.liquid-eff > span:nth-of-type(3){
+  position: absolute;
+  width: 120px;
+  height: 40px;
+  top: 0;
+  left: 0;
+  background-color: var(--cyberpunk);
+  border-radius: 20px;
+  transition: 1.2s cubic-bezier(0.3,2,0.8,-0.05);
+/*  */
+
+}
+.liquid:hover .liquid-eff::before {
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  left: 50%;
+
+}
+.liquid:hover .liquid-eff::after {
+  width: 15px;
+  height: 15px;
+  top: 40px;
+  left: 140px;
+}
+.liquid:hover .liquid-eff > span:nth-of-type(1){
+  width: 30px;
+  height: 30px;
+  top: -10px;
+  left: -20px;
+}
+.liquid:hover .liquid-eff > span:nth-of-type(2){
+  width: 25px;
+  height: 25px;
+  top: 40px;
+  left: -20px;
+}

@@ -11,7 +11,7 @@ body {
 .wrapper {
   max-width: 600px;
   display: inline-block;
-  grid-gap: 10px;
+  /* grid-gap: 20px; */
   justify-content: center;
   align-items: center;
   text-align: center;
